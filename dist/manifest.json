@@ -1,0 +1,36 @@
+{
+  "manifest_version": 3,
+
+  "name": "VH-Sync",
+  "description": "Sync your archive multi-angle videos on VH",
+  "version": "1.0.0",
+
+  "action": {
+    "default_icon": {
+      "16": "icon16.png",
+      "48": "icon48.png",
+      "128": "icon128.png"
+    },
+    "default_popup": "popup.html"
+  },
+
+  "background": {
+    "service_worker": "js/background.js"
+  },
+
+  "content_scripts": [
+    {
+      "matches": ["https://voyeur-house.tv/moments/*"],
+      "js": ["js/contentScript.js"]
+    }
+  ],
+
+  "icons": {
+    "16": "icon16.png",
+    "48": "icon48.png",
+    "128": "icon128.png"
+  },
+
+  "permissions": ["activeTab", "tabs", "scripting"],
+  "host_permissions": ["https://voyeur-house.tv/moments/*"]
+}
